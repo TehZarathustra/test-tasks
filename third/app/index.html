@@ -1,0 +1,57 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Задание 3: Аудиоплеер</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="apple-touch-icon" href="apple-touch-icon.png">
+		<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="vendor/normalize.css">
+		<link rel="stylesheet" href="css/bundle.min.css">
+		<link rel="stylesheet" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css">
+		<script src="vendor/modernizr-2.8.3.min.js"></script>
+	</head>
+	<body>
+		<!--[if lt IE 9]>
+			<div class="browserupgrade"><p><strong>ВАШ БРАУЗЕР УСТАРЕЛ</strong></p><p>Могут возникнуть ошибки и некорректное<br/>отображение сайтов</p><p>Пожалуйста, <a href="http://browsehappy.com/">обновите браузер</a></p></div>
+		<![endif]-->
+		<div class="audioPlayer">
+			<div class="songContainer"></div>
+			<div class="eq clearfix">
+				<div class="sliders">
+					<div class="controls">
+					<label>Low Gain</label>
+					<input type="range" class="lgain" value="50" step="1" min="0" max="100" oninput="audioPlayer.eq.update(this.value, 'lowGain');"></input>
+					</div>
+					<div class="controls">
+					<label>Mid Gain</label>
+					<input type="range" class="mgain" value="50" step="1" min="0" max="100" oninput="audioPlayer.eq.update(this.value, 'midGain');"></input>
+					</div>
+					<div class="controls">
+					<label>High Gain</label>
+					<input type="range" class="hgain" value="50" step="1" min="0" max="100" oninput="audioPlayer.eq.update(this.value, 'highGain');"></input>
+					</div>
+				</div>
+				<div class="presets">
+					<button class="rock" onclick="audioPlayer.eq.presets('rock');">rock</button>
+					<button class="low" onclick="audioPlayer.eq.presets('pop');">pop</button>
+					<button class="rock" onclick="audioPlayer.eq.presets('jazz');">jazz</button>
+					<button class="low" onclick="audioPlayer.eq.presets('classical');">classical</button>
+					<button class="low" onclick="audioPlayer.eq.presets('normal');">normal</button>
+					<button class="low" onclick="audioPlayer.eq.presets('lowest');">lowest</button>
+					<button class="low" onclick="audioPlayer.eq.presets('highest');">highest</button>
+				</div>
+			</div> <!-- end of equilizer -->
+			<div class="description">Перетащите вашу музыку сюда</div>
+			<div class="overlay hidden">Перетащите файлы</div>
+			<div class="list"><ul class="playList"></ul></div>
+		</div> <!-- end of audio-player -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="vendor/jquery-1.11.2.min.js"><\/script>')</script>
+		<script src="js/plugins.min.js"></script>
+		<script src="js/main.min.js"></script>
+	</body>
+</html>

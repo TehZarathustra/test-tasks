@@ -1,0 +1,81 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Задание 1: Онлайн табло</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="apple-touch-icon" href="apple-touch-icon.png">
+		<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+		<link rel="stylesheet" href="vendor/normalize.css">
+		<link rel="stylesheet" href="css/bundle.min.css">
+		<script src="vendor/modernizr-2.8.3.min.js"></script>
+	</head>
+	<body>
+		<!--[if lt IE 9]>
+			<div class="browserupgrade"><p><strong>ВАШ БРАУЗЕР УСТАРЕЛ</strong></p><p>Могут возникнуть ошибки и некорректное<br/>отображение сайтов</p><p>Пожалуйста, <a href="http://browsehappy.com/">обновите браузер</a></p></div>
+		<![endif]-->
+		<div class="flightTimetable">
+			<div class="heading">
+				<h2>Расписание на 08.07</h2>
+				<p>Московская область, аэропорт Домодево</p>
+			</div>
+			<div class="checkboxes">
+				<label>
+					<input type="checkbox" class="type-filter" name="departure" checked>
+					<span class="label-text">Вылет</span>
+				</label>
+				<label>
+					<input type="checkbox" class="type-filter" name="arrival">
+					<span class="label-text">Прилет</span>
+				</label>
+			</div>
+			<div class="flightTable">
+				<div class="body">
+					<table class="ts-table-section">
+						<thead class="ts-row-section">
+							<tr>
+								<th class="row-type">тип</th>
+								<th class="row-flight">рейс</th>
+								<th class="row-company">авикомпания</th>
+								<th class="row-craft">тип судна</th>
+								<th class="row-destination"><span class="heading-full">назначение</span><span class="heading-short">город</span></th>
+								<th class="row-time">время</th>
+								<th class="row-status">статус</th>
+								<th class="row-other">примечание</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- data.json -->
+						</tbody>
+					</table>
+					<div class="loading"><img src="img/loading.gif" alt=""></div>
+				</div>
+			</div>
+			<div id="modal">
+				<div class="modal-content">
+					<a href="#close" title="закрыть" class="close">×</a>
+					<table>
+						<thead>
+							<tr><th colspan="2">Вся информация</th></tr>
+						</thead>
+						<tbody>
+							<!--
+								sample empty tags to prevent colspan w3c validator error,
+								because initially tbody has no data
+							-->
+							<tr><td></td><td></td></tr>
+							<!-- data.json -->
+						</tbody>
+					</table>
+				</div>
+				<div class="overlay"></div>
+			</div>
+		</div> <!-- end of flightTimetable -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="vendor/jquery-1.11.2.min.js"><\/script>')</script>
+		<script src="js/plugins.min.js"></script>
+		<script src="js/main.min.js"></script>
+	</body>
+</html>

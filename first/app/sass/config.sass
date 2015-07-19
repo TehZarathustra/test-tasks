@@ -1,0 +1,35 @@
+// Font
+
+$mfn: Arial, 'Sans-serif'
+
+// Variables
+
+$menu: #535c7e
+$grey: #fbfbfb
+$red: #e54141
+$bordo: #951212
+$green: #33b71d
+$yellow: lighten(lightblue,5%)
+$sprite: check-sprite
+
+
+// Snippets
+
+=f($fontFamily, $fontSize, $fontWeight : normal, $color : #000)
+  font-family: $fontFamily
+  font-size: $fontSize
+  font-weight: $fontWeight
+  color: $color
+
+=spr($offsetX,$offsetY)
+  background-image: url(../img/#{$sprite}.png) !important
+  background-position: -#{$offsetX}px -#{$offsetY}px !important
+  background-repeat: no-repeat
+
+=transition($length)
+  transition: all $length ease-in-out 0s
+  -ms-transition: all $length ease-in-out 0s
+  -moz-transition: all $length ease-in-out 0s
+  -webkit-transition: all $length ease-in-out 0s
+
+

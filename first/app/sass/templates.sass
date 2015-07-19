@@ -1,0 +1,130 @@
+.flightTimetable
+  max-width: 1600px
+  margin: 0 auto
+  padding: 20px 10px
+  .body
+    position: relative
+  h2
+    +f($mfn,22px,bold)
+    margin-bottom: 0
+  p
+    margin-top: 0
+    +f($mfn,13px,normal,#5c5c5c)
+  .flightTable
+    table
+      overflow: hidden
+      width: 100%
+      position: relative
+    th,td
+      padding: 10px
+      text-align: left
+      position: relative
+    th
+      +f($mfn,14px,normal,#fff)
+    td
+      +f($mfn,14px)
+    tbody
+      position: relative
+      tr
+        &:nth-child(odd)
+          background: darken($grey,2%)
+        &:hover
+          cursor: pointer
+    thead
+      background: $menu
+    .status-red
+      background: $red
+      color: #fff
+    .status-green
+      background: $green
+      color: #fff
+    .row-type
+      width: 3%
+    .row-flight
+      width: 8%
+    .row-company
+      width: 20%
+    .row-craft
+      width: 15%
+    .row-destination
+      width: 15%
+    .row-time
+      width: 10%
+    .row-status
+      width: 12%
+    .row-other
+      width: 15%
+  .arrival-icon
+    width: 27px
+    height: 27px
+    background: url(../img/arrive.png)
+  .departure-icon
+    width: 27px
+    height: 27px
+    background: url(../img/departure.png)
+  .logo
+    margin-left: 10px
+  .craft-short, .heading-short
+    display: none
+
+.loading
+  display: none
+  position: absolute
+  bottom: -50px
+
+.hover
+  background: $yellow
+
+.ts-row-fixed
+  position: fixed
+  visibility: hidden
+  z-index: 10
+  border-bottom: 1px solid #dddddd
+  background-color: #ffffff
+
+.checkboxes
+  margin-bottom: 30px
+
+label
+  cursor: pointer
+  color: #666
+  margin-right: 10px
+  input[type="checkbox"]
+    display: none
+    + .label-text
+      color: #000
+      +f($mfn,16px,bold)
+    + .label-text:before
+      content: ""
+      display: inline-block
+      width: 45px
+      position: relative
+      top: 15px
+      margin-right: 10px
+      height: 45px
+      +spr(0,90)
+    + .label-text:hover:before
+      +spr(0,0)
+    &:checked + .label-text:before
+      +spr(0,45)
+      animation: tick 180ms ease-out
+    &:disabled + .label-text
+      color: #000
+  ::selection
+    background: #fff
+
+
+// Animation
+@keyframes tick
+  0%
+    transform: scale(.8)
+    -webkit-transform: scale(.8)
+    -moz-transform: scale(.8)
+  90%
+    transform: scale(1.1)
+    -webkit-transform: scale(1.1)
+    -moz-transform: scale(1.1)
+  100%
+    transform: scale(1)
+    -moz-transform: scale(1)
+    -webkit-transform: scale(1)

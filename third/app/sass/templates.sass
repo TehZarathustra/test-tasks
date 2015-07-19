@@ -1,0 +1,164 @@
+// vars
+
+$mainWidth: 820px
+
+// equalizer
+
+.eq
+  margin-top: -110px
+  opacity: 0
+  margin-left: 10px
+  +transition(.5s)
+  label
+    display: inline-block
+    width: 70px
+    +f($mfn,1em)
+    position: relative
+    top: -5px
+  &.active
+    opacity: 1
+    margin-top: 20px
+  .sliders, .presets
+    float: left
+  .presets
+    width: 250px
+    margin-left: 20px
+    margin-top: 5px
+    button
+      margin-bottom: 5px
+
+// playlist
+
+div.list
+  margin-top: 50px
+  max-width: $mainWidth
+  ul
+    padding: 0
+  li
+    cursor: pointer
+    padding: 5px
+    position: relative
+    width: 99%
+    list-style: none
+    height: 125px
+    background: lighten(#d8d8d8,10%)
+    &:hover
+      .songOverlay
+        opacity: 1
+  .image, .text
+    float: left
+    white-space: nowrap
+  .image
+    width: 125px
+    height: 125px
+  .text
+    width: 400px
+    height: 125px
+  .song
+    color: gray
+  img
+    width: 125px
+    height: 125px
+  .songOverlay
+    position: absolute
+    background: rgba(0,0,0,.2)
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    text-align: center
+    +transition(.2s)
+    opacity: 0
+    i
+      margin-top: 1em
+      font-size: 3em
+      color: #fff
+  p
+    margin-left: 1em
+    +f($mfn,1.5em)
+
+
+// general style
+
+.songContainer
+  position: relative
+  z-index: 1
+
+.audioPlayer
+  max-width: $mainWidth
+  margin: 30px auto
+
+.description
+  +f($mfn,1.5em)
+  text-align: center
+  line-height: 70vh
+
+// active song
+
+.playerBox
+  height: 150px
+  background: #fff
+  box-shadow: 0 0 0 1px rgba(0,0,0,.2)
+  overflow: hidden
+  padding: 5px
+  position: relative
+  canvas
+    position: absolute
+    bottom: 5px
+    right: 10px
+  .image, .song
+    float: left
+  .image
+    height: 100%
+    width: 150px
+    max-width: 150px
+    border-right: 1px solid rgba(0,0,0,.2)
+    img
+      width: 100%
+      height: 100%
+  .song
+    width: $mainWidth - 128
+  .songName
+    white-space: nowrap
+    position: absolute
+    top: 5px
+    left: 155px
+    z-index: 1
+    margin-left: 5px
+    +f($mfn,1.5em,normal,gray)
+  .fa
+    cursor: pointer
+    font-size: 2em
+    color: gray
+    +transition(.2s)
+    &:hover
+      color: lightgray
+  .fa-play, .fa-sliders
+    margin-right: 10px
+  .controls
+    position: absolute
+    top: 5px
+    right: 5px
+    z-index: 2
+    > div
+      display: inline-block
+
+// overlay
+
+.overlay
+  position: fixed
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  z-index: 100
+  background-color: rgba(0,0,0,.5)
+  color: #fff
+  text-align: center
+  font: bold 36px sans-serif
+  line-height: 90vh
+  transition: 0.4s
+  &.hidden
+    opacity: 0
+    pointer-events: none
+    transition: 0.6s
