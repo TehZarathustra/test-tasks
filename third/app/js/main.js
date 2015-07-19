@@ -163,17 +163,17 @@ var audioPlayer = {
 		audio.controls = true;
 		audio.autoplay = true;
 		// get html for the song
-		$('.songContainer').html(audioPlayer.activeSongHtml(song));
+		$('.songContainer').html(this.activeSongHtml(song));
 		audio.play();
 		// init its buttons
-		audioPlayer.controls.stopTrack();
-		audioPlayer.controls.playTrack();
-		audioPlayer.controls.showEq();
+		this.controls.stopTrack();
+		this.controls.playTrack();
+		this.controls.showEq();
 		// write its index
-		audioPlayer.globals.i = index;
+		this.globals.i = index;
 		audio.addEventListener("ended",function() { nextSong(index); } , false);
 		document.title = song.artist + ' - ' + song.title;
-		audioPlayer.visualizer(audio,song);
+		this.visualizer(audio,song);
 		// play next song
 		var nextSong = function() {
 			var i = audioPlayer.globals.i,
@@ -195,7 +195,7 @@ var audioPlayer = {
 		var canvas, ctx, source,
 			analyser, fbc_array, bars, bar_x,
 			bar_width, bar_height,
-			context = audioPlayer.globals.context;
+			context = this.globals.context;
 
 		function initPlayer() {
 			analyser = context.createAnalyser();
@@ -210,8 +210,8 @@ var audioPlayer = {
 		}
 
 		initPlayer();
-		audioPlayer.eq.initEq();
-		audioPlayer.eq.reset();
+		this.eq.initEq();
+		this.eq.reset();
 		function frameLooper() {
 			// gradient
 			var gradient = ctx.createLinearGradient(0,0,0,300);
