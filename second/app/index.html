@@ -1,0 +1,29 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Задание 2: Поправить код</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="apple-touch-icon" href="apple-touch-icon.png">
+		<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+		<link rel="stylesheet" href="vendor/normalize.css">
+		<link rel="stylesheet" href="css/bundle.min.css">
+		<script src="vendor/modernizr-2.8.3.min.js"></script>
+	</head>
+	<body>
+		<!--[if lt IE 9]>
+			<div class="browserupgrade"><p><strong>ВАШ БРАУЗЕР УСТАРЕЛ</strong></p><p>Могут возникнуть ошибки и некорректное<br/>отображение сайтов</p><p>Пожалуйста, <a href="http://browsehappy.com/">обновите браузер</a></p></div>
+		<![endif]-->
+		<section>
+			<h1>Задание 2: Поправить код</h1>
+			<h2>Основная проблема</h2>
+			<p>Сначала три раза срабатывал реквестgetData, а потом три раза callback, в результате чего callback получал неактуальные данные (последний результат итерации — три раза responses[populations] = result).</p>
+			<h2>Чтобы все работало</h2>
+			<p>Необходимо было передавать каждый раз в callback актуальные данные. Проблема решилась с заменой for на forEach, что позволило связать getData и callback так, чтобы они шли поочередно.</p>
+			<p>В итоге: понадобилось заменить одну строку (50-ую), чтобы приложение заработало, другой код не был тронут, диалог с пользователем был реализован внутри существующих циклов.</p>
+		</section>
+		<script src="js/main.min.js"></script>
+	</body>
+</html>

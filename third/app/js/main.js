@@ -179,8 +179,8 @@ var audioPlayer = {
 			var i = audioPlayer.globals.i,
 				newSong = audioPlayer.globals.allTracks;
 			if (newSong.length > 1) {
-				if (newSong[i]) {
-					newSong = newSong[i];
+				if (newSong[i+1]) {
+					newSong = newSong[i+1];
 					i++;
 				} else {
 					newSong = newSong[0];
