@@ -8,7 +8,6 @@ var audioPlayer = {
 		temporarySearchPlaylist: [],
 		// The number of the current track
 		i: 0,
-		// Array for last played (used when shuffling songs)
 		lastPlayed: [],
 		timer: 0
 	},
