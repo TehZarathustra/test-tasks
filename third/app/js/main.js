@@ -155,6 +155,7 @@ var audioPlayer = {
 	playSong: function(song,index) {
 		// stop current object and init new
 		this.globals.audio.pause();
+		this.globals.audio.remove();
 		this.globals.audio = new Audio();
 		var audio = audioPlayer.globals.audio,
 			file = song.audioTrack,
